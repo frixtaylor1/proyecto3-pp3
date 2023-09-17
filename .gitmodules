@@ -1,0 +1,6 @@
+[submodule "pp3-p3-app"]
+	path = pp3-p3-app
+	url = https://github.com/frixtaylor1/pp3-p3-app
+[submodule "pp3-p3-api"]
+	path = pp3-p3-api
+	url = https://github.com/frixtaylor1/pp3-p3-api
