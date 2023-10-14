@@ -1,0 +1,40 @@
+version: '3'
+services:
+  db:
+    image: mariadb
+    container_name: pp3-p3-db
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+
+  adminer:
+    image: adminer
+    container_name: pp3-p3-adminer
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+
+  api:
+    build:
+      context: ./pp3-p3-api
+      dockerfile: Dockerfile
+    container_name: pp3-p3-api
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+    volumes:
+      - ./pp3-p3-api:/app
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mariadb_data:
