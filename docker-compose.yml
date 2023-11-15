@@ -26,7 +26,7 @@ services:
       dockerfile: Dockerfile
     container_name: pp3-p3-api
     ports:
-      - "3000:3000"
+      - "3336:3000"
     networks:
       - app-network
     volumes:
